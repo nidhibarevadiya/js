@@ -244,13 +244,13 @@ let temp=" ";
 
 for(let i=0; i<data.length; i++) {
     temp += `
-   <div class="col-lg-3 col-md-6 py-3 ">
+  <div class="col-lg-3 col-md-6 py-3 ">
     <div class="box  ">
-        <img src=${data[i].image} alt="" class="img-fluid im">
-        <h3 class="ti">${data[i].title}</h3>
-        <p  class="ti1">${data[i].price}</p>
-         <p  class="ti3">${data[i].rating.rate}</p>
-        <button class="btn btn-primary ti2 ">Buy</button>
+       <div class="flex"> <img src=${data[i].image} alt="" class="img-fluid im"></div>
+       <div class="flex"> <h3 class="ti">${data[i].title}</h3></div>
+       <div class="flex"> <p  class="ti1">${data[i].price}</p></div>
+        <div class="flex"> <p  class="ti3">${data[i].rating.rate}</p></div>
+       <div class="flex"> <button class="btn btn-primary ti2 ">Buy</button></div>
     </div>
 </div>
     `;
