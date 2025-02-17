@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.box{
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #D1F8EF;
+}
+.imgr{
+    transition: transform 2s ease;
+}
+
+.imgr:hover{
+    transform: scale(1.1);
+}
+.green{
+    color: green;
+}
+.red{
+    color: red;
+}
+.contect{
+    margin: 2px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 5px;
+}
+.center{
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center1{
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cente{
+   text-align: center;
+}
