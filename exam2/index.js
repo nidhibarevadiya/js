@@ -1807,7 +1807,7 @@ let products=[  {
    <div class="center"> <p >${products[i].discountPercentage}</p></div>
     <div class="center"><p class=${products[i].rating > 3 ? "green":"red"} > ${products[i].rating}</p></div>
    <div class="center"> <p >${products[i].stock}</p></div>
-    <div class="center"> <p >${products[i].tags}</p></div>
+    <div class="center"> <p >${products[i].tags[0]}</p></div>
      <div class="center"><img src="${products[i].thumbnail}" class="imgr"/></div>
      </div>
     `
