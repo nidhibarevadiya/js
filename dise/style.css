@@ -1,13 +1,32 @@
-body { 
-    text-align: center; 
+         
    
-}
-        .dice { 
-            font-size: 100px;
-         }
-        button { 
-            font-size: 20px; 
-            padding: 10px; 
-            margin-top: 20px; 
-             }
-  
+   *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+   .container{
+    width: 700px;
+    height: 600px;
+    background-color: chocolate;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+   }
+   .dise-img{
+    width: 400px;
+    height: 400px;
+
+   }
+   .dise-img img{
+    width: 100%;
+    height: 100%;
+   }
+   .button button{
+    font-size: 24px;
+    border: 2px solid black;
+    width: 150px;
+   }
