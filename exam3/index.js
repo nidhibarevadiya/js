@@ -34,11 +34,11 @@ const uiemp =()=>{
         let td7=document.createElement("td");
         td7.innerHTML=employee1.salary;
 
-        let img=document.createElement("img");
-        img.src=employee1.img;
-        let td8=document.createElement("td");
+        let img = document.createElement("img");
+        img.src = employee1.image;
+        let td8 = document.createElement("td");
         td8.append(img);
-
+    
 
         let but=document.createElement("button");
         but.innerHTML="Delete";
@@ -75,7 +75,7 @@ if (expersions< 3) {
 }
 
 let salary= document.getElementById("salary").value;
-let image= document.getElementById("img").value;
+let image = document.getElementById("image").value;
 
 
 
@@ -87,14 +87,14 @@ let emp1={
     expersions:expersions,
     expersionsLevels: expersionsLevels,
     salary:salary,
-    image:image
+    image: image,
 };
 
 
 arr.push(emp1);
 // console.log(arr);
 uiemp();
-}
+};
 
 
 document.getElementById("emp").addEventListener("submit", submite);
