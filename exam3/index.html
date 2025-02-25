@@ -10,12 +10,14 @@
 </head>
 <body>
     <form id="emp">
-        <label >Name:</label>
-        <input type="text" id="name"  ><br><br>
+        <div class="divv">
+            <div>
+                <label >Name:</label>
+        <input type="text" id="name" required><br><br>
         <label >Number</label>
-        <input type="number" id="number"><br><br>
+        <input type="number" id="number" required><br><br>
         <label>Email:</label>
-        <input type="email" id="email"><br><br>
+        <input type="email" id="email" required><br><br>
         <label>Jobroll</label>
         <select id="jobroll">
             <option value="">select </option>
@@ -24,12 +26,14 @@
             <option value="backend">Backend</option>
         </select><br><br>
         <label >Experiance:</label>
-        <input type="number" id="enumber"><br><br>
+        <input type="number" id="expersions" required><br><br>
         <label >Salery:</label>
         <input type="number" id="salary"><br><br>
         <label >Image:</label>
-        <input type="url" id="img1"><br><br>
-        <input type="submit" value="submit">
+        <input type="url" id="img" class="img1"><br><br>
+        <input type="submit" value="submit" id="btn">
+            </div>
+        </div>
 
     </form>
     <br><br>

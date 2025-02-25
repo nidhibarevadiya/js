@@ -1,16 +1,6 @@
 let arr=[];
 
-const exl=(index)=>{
-    if(employee1.expriance < 3&& employee1.expriance>0){
-            `jonior`;        }
-        elseif(employee1.expriance<=3&& employee1.expriance>=5)
-        {
-            `mid`;      }  
 
-        else {
-            `senior`;   
-}
-}
 const handledelet = (index)=> {
     arr.splice(index,1);
     uiemp();
@@ -35,25 +25,28 @@ const uiemp =()=>{
         td4.innerHTML=employee1.jobroll;
 
         let td5=document.createElement("td");
-        td5.innerHTML=employee1.expriance;
+        td5.innerHTML=employee1.expersions;
 
-        let td9=document.createElement("td");
-        td9.addEventListener("submit",() => exl(i));
-        
+       
+        let td6 = document.createElement("td");
+        td6.innerHTML = employee1.expersionsLevels;
 
-        let td6=document.createElement("td");
-        td6.innerHTML=employee1.salary;
+        let td7=document.createElement("td");
+        td7.innerHTML=employee1.salary;
 
         let img=document.createElement("img");
-        img.src=employee1.img1;
-        let td7=document.createElement("td");
-        td7.append(img);
+        img.src=employee1.img;
+        let td8=document.createElement("td");
+        td8.append(img);
+
 
         let but=document.createElement("button");
+        but.innerHTML="Delete";
         but.addEventListener("click", ()=>handledelet(i))
-           let td8=document.createElement("td");
-           td8.append(but);
-   
+           let td9=document.createElement("td");
+           td9.append(but);
+
+         
            let tr=document.createElement("tr");
            tr.append(td1,td2,td3,td4,td5,td6,td7,td8,td9);
            document.getElementById("tablebody").append(tr);
@@ -62,32 +55,46 @@ const uiemp =()=>{
 });
 }
 
-const submite = (e) =>{
-    e.preventDefault();
-    let name =document.getElementById("name").value;
-    let number= document.getElementById("number").value;
-    let email= document.getElementById("email").value;
-    let jobroll= document.getElementById("jobroll").value;
-    let expriance= document.getElementById("enumber").value;
-    let salary= document.getElementById("salary").value;
-    let image= document.getElementById("img1").value;
 
-    let emp1={
-        name:name,
-        number:number,
-        email:email,
-        jobroll:jobroll,
-        expriance:expriance,
-        salary:salary,
-        image:image
-    };
 
-   
-    arr.push(emp1);
-    // console.log(arr);
-    uiemp();
-    
+const submite =(e)=>{
 
+
+e.preventDefault();
+let name =document.getElementById("name").value;
+let number= document.getElementById("number").value;
+let email= document.getElementById("email").value;
+let jobroll= document.getElementById("jobroll").value;
+let expersions= document.getElementById("expersions").value;
+if (expersions< 3) {
+  expersionsLevels = " Junior";
+} else if (expersions >= 3 && expersions < 5) {
+  expersionsLevels = "Medium";
+} else {
+  expersionsLevels = "Senior";
+}
+
+let salary= document.getElementById("salary").value;
+let image= document.getElementById("img").value;
+
+
+
+let emp1={
+    name:name,
+    number:number,
+    email:email,
+    jobroll:jobroll,
+    expersions:expersions,
+    expersionsLevels: expersionsLevels,
+    salary:salary,
+    image:image
 };
+
+
+arr.push(emp1);
+// console.log(arr);
+uiemp();
+}
+
 
 document.getElementById("emp").addEventListener("submit", submite);
