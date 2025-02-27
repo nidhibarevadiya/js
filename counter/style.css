@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.main{
+    margin-top: 50px;
+    width: 1100px;
+    height: 600px;
+    background-color: black;
+}
+
+.subdiv{
+    width: 300px;
+    height: 400px;
+    border-radius: 250px;
+    display: flex;
+    justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 5PX;   
+background-color: #443627;
+color: #D98324;
+}
+.countbox{
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+align-items: center;
+    border-radius: 100%;
+    color: #443627;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR358Zbx5E8pwOkPxF28hKlP9fLjtoMZnLkIzYtL0jpcY4NMFQuMbz44mVFdY9h9vjs8cc&usqp=CAU);
+    background-size: cover;
+    backdrop-filter: 2px;
+}
+.h11{
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+   margin-top: 10px; 
+   color: #D98324;
+}
