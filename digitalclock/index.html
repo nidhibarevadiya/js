@@ -4,37 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Clock</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #282c34;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-        .clock {
-            font-size: 3rem;
-            background: black;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-        }
-    </style>
+    <link rel="stylesheet" href="./index.css">
+   
 </head>
 <body>
+
+   
+    <div>
+        <h1 class="title"> Digital Clock</h1>
     <div class="clock" id="clock">00:00:00</div>
-    <script>
-        function updateClock() {
-            const now = new Date();
-            let hours = now.getHours().toString().padStart(2, '0');
-            let minutes = now.getMinutes().toString().padStart(2, '0');
-            let seconds = now.getSeconds().toString().padStart(2, '0');
-            document.getElementById('clock').innerText =` ${hours}:${minutes}:${seconds}`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock(); // Initial call to avoid delay
-    </script>
+</div>
+   
 </body>
+
+<script src="./index.js"></script>
 </html>
