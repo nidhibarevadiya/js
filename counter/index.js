@@ -1,6 +1,10 @@
 let count=0;
 let value=document.getElementById("count1").innerHTML;
-console.log(value);
+// console.log(value);
+
+
+
+
 setTimeout(()=>{
 let counter=setInterval(()=>{
     count++;
