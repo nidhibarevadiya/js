@@ -3,3 +3,32 @@
     padding: 0%;
     box-sizing: border-box;
 }
+.countermain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333;
+}
+.countertext{
+    text-align: center;
+    font-size: 43px;
+ 
+}
+#counter{
+    text-align: center;
+    font-size: 34px;
+    color: #fff;
+}
+
+.button{
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    cursor: pointer;
+}
