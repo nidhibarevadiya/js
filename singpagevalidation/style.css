@@ -49,9 +49,10 @@ input[type="submit"]:hover {
     transform: scale(1.05);
 }
 
+
 .passed{
-border: 2px solid green;
+    border: 1px solid rgb(2, 83, 2);
 }
 .err{
-    border: 2px solid red;
+    border: 1px solid red;
 }

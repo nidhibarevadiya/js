@@ -1,27 +1,31 @@
-
 const getvalue = (id) => {
-    return document.getElementById(id).value;
-}
+  return document.getElementById(id).value;
+};
 
+const validateInput = (id, regex) => {
+let inputField = document.getElementById(id); 
+let value = inputField.value; 
+
+if (regex.test(value)) {
+  inputField.className = "passed"; 
+} else {
+  inputField.className = "err"; 
+}
+};
 
 const handeluserinfo = (e) => {
-    e.preventDefault();
-    let name = getvalue("name");
-    let email = getvalue("email");
-    let password = getvalue("password");
-    let number = getvalue("number");
+  e.preventDefault();
 
-  let userregex=  /^[a-zA-Z ]{2,30}$/;
-  let emailregex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  let passwordregex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/;
-  let numberregex = /^(0|91)?[6-9][0-9]{9}$/;
+  let name = getvalue("name");
+  let email = getvalue("email");
+  let password = getvalue("password");
+  let number = getvalue("number");
 
-  if(userregex.test("name")){
-    document.getElementById("name").setAttribute("class","passed")
-  }
-  else{
-    document.getElementById("name").setAttribute("class","err")
-  }
+ 
+  validateInput("name", /^[a-zA-Z\s]{3,30}$/); 
+  validateInput("email", /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/); 
+  validateInput("password", /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/); 
+  validateInput("number", /^(0|91)?[6-9][0-9]{9}$/);
 };
 
 document.getElementById("userinfo").addEventListener("submit", handeluserinfo);
