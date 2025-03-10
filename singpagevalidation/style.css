@@ -52,7 +52,9 @@ input[type="submit"]:hover {
 
 .passed{
     border: 1px solid rgb(2, 83, 2);
+    outline:1px solid rgb(2, 83, 2) ;
 }
 .err{
     border: 1px solid red;
+    outline: 1px solid red;
 }
