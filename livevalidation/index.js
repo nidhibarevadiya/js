@@ -2,16 +2,16 @@ const getValue = (id) => {
   return document.getElementById(id).value;
 };
 
-const handleUserData = (e) => {
-  e.preventDefault();
+// const handleUserData = (e) => {
+//   e.preventDefault();
 
-  let username = getValue("username");
-  let email = getValue("email");
-  let password = getValue("password");
-  let number = getValue("number");
-};
+//   let username = getValue("username");
+//   let email = getValue("email");
+//   let password = getValue("password");
+//   let number = getValue("number");
+// };
 
-document.getElementById("userData").addEventListener("submit", handleUserData);
+// document.getElementById("userData").addEventListener("submit", handleUserData);
 
 // live validation
 
