@@ -30,10 +30,10 @@ const uimaker = (products)=>{
         let div1 =document.createElement("h1");
         div1.innerHTML=productlist.title;
 
-        let div2 =document.createElement("h3");
+        let div2 =document.createElement("p");
         div2.innerHTML=productlist.price;
 
-        let div3 =document.createElement("h3");
+        let div3 =document.createElement("p");
         div3.innerHTML=productlist.catagery;
 
         let image=document.createElement("img");
@@ -45,8 +45,7 @@ const uimaker = (products)=>{
         let but=document.createElement("button");
         but.innerHTML="delete";
 
-        let div5=document.createElement("div");
-        div5.append(but)
+      
 
         let likebutton =document.createElement("button");
         likebutton.innerHTML="like";
@@ -63,10 +62,14 @@ const uimaker = (products)=>{
                 alert("Your Product is Added");
               }
         })
+
+
+        let div5= document.createElement("p");
+        div5.append(but,likebutton)
    
 
         let div6 =document.createElement("div");
-        div6.append(div4,div1,div2,div3,div5,likebutton)
+        div6.append(div4,div1,div2,div3,div5)
 
         document.getElementById("productui").append(div6)
     });
