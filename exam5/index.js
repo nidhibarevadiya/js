@@ -5,16 +5,16 @@ const uimaker=(NEWS)=>{
     document.getElementById("newsuishow").innerHTML="";
     NEWS.map((newspro,i)=>{
 
-        let tital=document.createElement("p");
+        let tital=document.createElement("h1");
         tital.innerHTML=newspro.tital;
 
         let image1=document.createElement("img");
         image1.src=newspro.Image;
 
-        let contect=document.createElement("p");
+        let contect=document.createElement("h6");
         contect.innerHTML=newspro.contect ;
 
-        let  catagery=document.createElement("p");
+        let  catagery=document.createElement("h4");
         catagery.innerHTML=newspro. catagery;
 
         let but=document.createElement("button");
