@@ -38,22 +38,31 @@ const handeldelet =(i)=>{
 }
 uimaker(NEWS);
 
-// const handelsubmit = (e) => {
-//     e.preventDefault();
-
-//     let news = {
-//         tital: getvalue("title"),
-//         Image: getvalue("image"),
-//         contect: getvalue("contect"),
-//         catagery: getvalue("catagery")
-
-//     }
-
-//         NEWS.push(news)
-//         // console.log(NEWS)
-//         uimaker(NEWS);
-//         localStorage.setItem("newss",JSON.stringify(NEWS))
+const getvalue = (id) => {
+    return document.getElementById(id).value
+}
 
 
-// }
-// document.getElementById("newsform").addEventListener("submit", handelsubmit)
+const searching =(value)=>{
+    let temp =NEWS.filter((ele)=> ele.tital.toLowerCase().includes(value.toLowerCase()));
+    uimaker(temp);
+    }
+
+document.getElementById("search").addEventListener("input",()=>{
+    let value=getvalue("search");
+    searching(value);
+});
+
+
+const fillterbycategary = (catagery) => {
+    if(catagery =="all"){
+        uimaker(NEWS);  
+        return;
+    }
+    let temp =NEWS.filter((cate)=>cate.catagery==catagery);
+    uimaker(temp);
+}
+document.getElementById("helth").addEventListener("click",()=>fillterbycategary("helth"));
+document.getElementById("tecnology").addEventListener("click",()=>fillterbycategary("tecnology"));
+document.getElementById("ententment").addEventListener("click",()=>fillterbycategary("ententment"));
+document.getElementById("all").addEventListener("click",()=>fillterbycategary("all"));
