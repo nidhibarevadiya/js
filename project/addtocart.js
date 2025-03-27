@@ -12,8 +12,8 @@ const displayCart = () => {
   
     cartContainer.innerHTML = cart
   .map((item, index) => `
-    <div class="cart-item">
-      <div class="col-lg-4 col-md-6 py-3">
+    <div class="cart-item  col-lg-4 col-md-6 py-3">
+     
         <div class="box">
           <div class="flex"><img src="${item.image}" alt="" class="img-fluid im"></div>
           <div class="flex"><h3 class="ti">${item.title}</h3></div>
@@ -23,7 +23,7 @@ const displayCart = () => {
           <div class="flex"><p class="ti3">${item.rating ? item.rating.rate : "No Rating"}</p></div>
           <button class="btn btn-danger" onclick="removeFromCart(${index})">DELETE</button>
         </div>
-      </div>
+   
     </div>
   `).join("");
   };
