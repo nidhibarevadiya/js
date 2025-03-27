@@ -106,3 +106,17 @@
     
      /* background-color: rgba(255, 228, 196, 0.394); */
  }
+
+ /* add to cart page */
+ .cartpage{
+    height: 70px;
+    width: 100%;
+    color: #638C6D;
+    background-color: black;
+    margin-top: 3px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+

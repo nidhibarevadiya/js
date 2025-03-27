@@ -195,7 +195,8 @@ for(let i=0; i<products.length; i++) {
        <div class="flex"> <p  class="ti1">${products[i].price}</p></div>
         <div class="flex"> <p  class="ti1">${products[i].category}</p></div>
         <div class="flex"> <p  class="ti3">${products[i].rating.rate}</p></div>
-       <div class="flex"> <button class="btn btn-primary ti2 ">Buy</button></div>
+     
+         <div class="flex"><button class="btn btn-primary ti2" onclick="addToCart(${products[i].id})">Add to Cart</button></div>
     </div>
 </div>
     `;
@@ -262,6 +263,27 @@ document
       let value = document.getElementById("search").value;
       Serching(value);
     });
+
+
+// Initialize cart from local storage
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// Function to add products to cart and store in local storage
+const addToCart = (id) => {
+  let selectedProduct = products.find((product) => product.id === id);
+
+  if (!cart.some((item) => item.id === id)) {
+    cart.push(selectedProduct);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(`${selectedProduct.title} added to cart!`);
+  } else {
+    alert("This product is already in your cart.");
+  }
+};
+
+// Display products on page load
+displya(products);
+    
   
   
   
