@@ -21,9 +21,9 @@ const displayCart = () => {
           <div class="flex"><p class="ti1">$${item.price.toFixed(2)}</p></div>
           <div class="flex"><p class="ti1">${item.category}</p></div>
           <div class="flex"><p class="ti3">${item.rating ? item.rating.rate : "No Rating"}</p></div>
-          <button class="btn btn-danger" onclick="removeFromCart(${index})">DELETE</button>
+          <button class="btn btn-success" onclick="removeFromCart(${index})">DELETE</button>
         </div>
-   
+   ..
     </div>
   `).join("");
   };
