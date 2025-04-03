@@ -1,39 +1,47 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-const displayCart = () => {
-   
+
+const updateCartDisplay = () => {
     let cartContainer = document.getElementById("cart-items");
-    let temp = "";
-  
-    if (cart.length === 0) {
-      cartContainer.innerHTML = "<p>Your cart is empty.</p>";
-      return;
-    }
-  
-    cartContainer.innerHTML = cart
-  .map((item, index) => `
-    <div class="cart-item  col-lg-4 col-md-6 py-3">
-     
-        <div class="box">
-          <div class="flex"><img src="${item.image}" alt="" class="img-fluid im"></div>
-          <div class="flex"><h3 class="ti">${item.title}</h3></div>
-          <div class="flex"><p class="des">${item.description}</p></div>
-          <div class="flex"><p class="ti1">$${item.price.toFixed(2)}</p></div>
-          <div class="flex"><p class="ti1">${item.category}</p></div>
-          <div class="flex"><p class="ti3">${item.rating ? item.rating.rate : "No Rating"}</p></div>
-          <button class="btn btn-success" onclick="removeFromCart(${index})">DELETE</button>
-        </div>
-   ..
-    </div>
-  `).join("");
-  };
-  
-  // Function to remove an item from the cart
-  const removeFromCart = (index) => {
-    cart.splice(index, 1);
+    let grandTotal = 0;
+    cartContainer.innerHTML = cart.length === 0 ? '<tr><td colspan="6">Your cart is empty.</td></tr>' : "";
+
+    cart.forEach((item, index) => {
+        let total = item.price * item.quantity;
+        grandTotal += total;
+        cartContainer.innerHTML += `
+            <tr>
+                <td><img src="${item.image}" alt="${item.title}" class="img-fluid" style="width: 50px;"></td>
+                <td>${item.title}</td>
+                <td>$${item.price.toFixed(2)}</td>
+                <td>
+                    <button class="btn btn-sm btn-secondary" onclick="updateQuantity(${index}, -1)">-</button>
+                    <span class="mx-2">${item.quantity}</span>
+                    <button class="btn btn-sm btn-secondary" onclick="updateQuantity(${index}, 1)">+</button>
+                </td>
+                <td>$${total.toFixed(2)}</td>
+                <td><button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Remove</button></td>
+            </tr>
+        `;
+    });
+    document.getElementById("grand-total").textContent = grandTotal.toFixed(2);
     localStorage.setItem("cart", JSON.stringify(cart));
-    displayCart();
-  };
-  
-  // Display cart items on page load
-  displayCart();
+};
+
+const updateQuantity = (index, change) => {
+  if (cart[index]) {
+    if (cart[index].quantity + change >= 1) {
+      cart[index].quantity += change;
+    } else {
+      cart[index].quantity = 1;
+    }
+    updateCartDisplay();
+  }
+};
+
+const removeFromCart = (index) => {
+    cart.splice(index, 1);
+    updateCartDisplay();
+};
+
+updateCartDisplay();

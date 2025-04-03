@@ -205,6 +205,9 @@ for(let i=0; i<products.length; i++) {
 document.getElementById('product').innerHTML=temp;
 }
 
+
+
+
 const handleSort = (orderby) => {
   if (orderby === "lth") {
     products.sort((a, b) => a.price - b.price);
@@ -265,25 +268,21 @@ document
     });
 
 
-// Initialize cart from local storage
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Function to add products to cart and store in local storage
-const addToCart = (id) => {
-  let selectedProduct = products.find((product) => product.id === id);
-
-  if (!cart.some((item) => item.id === id)) {
-    cart.push(selectedProduct);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    alert(`${selectedProduct.title} added to cart!`);
-  } else {
-    alert("This product is already in your cart.");
-  }
-};
-
-// Display products on page load
-displya(products);
+    const addToCart = (id) => {
+      let selectedProduct = products.find((product) => product.id === id);
+      let existingItem = cart.find((item) => item.id === id);
     
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ ...selectedProduct, quantity: 1 });
+      }
+    
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${selectedProduct.title} added to cart!`);
+    };
   
   
   

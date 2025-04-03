@@ -64,10 +64,25 @@
    
 
   </section>
-  <div id="cart-items" class="row"></div>
-
- 
-
+  <div class="container cart-container">
+   
+    <table class="table table-bordered cart-table">
+        <thead class="table-dark">
+            <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+          
+        </tbody>
+    </table>
+    <h4 class="text-end">Grand Total: $<span id="grand-total">0.00</span></h4>
+</div>
 
 
 </body>
