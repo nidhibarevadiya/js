@@ -1,7 +1,7 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 
-const updateCartDisplay = () => {
+const cartui = () => {
     let cartContainer = document.getElementById("cart-items");
     let grandTotal = 0;
     cartContainer.innerHTML = cart.length === 0 ? '<tr><td colspan="6">Your cart is empty.</td></tr>' : "";
@@ -15,12 +15,12 @@ const updateCartDisplay = () => {
                 <td>${item.title}</td>
                 <td>$${item.price.toFixed(2)}</td>
                 <td>
-                    <button class="btn btn-sm btn-secondary" onclick="updateQuantity(${index}, -1)">-</button>
+                    <button class="btn btn-sm btn-secondary" onclick="Quantity(${index}, -1)">-</button>
                     <span class="mx-2">${item.quantity}</span>
-                    <button class="btn btn-sm btn-secondary" onclick="updateQuantity(${index}, 1)">+</button>
+                    <button class="btn btn-sm btn-secondary" onclick="Quantity(${index}, 1)">+</button>
                 </td>
                 <td>$${total.toFixed(2)}</td>
-                <td><button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Remove</button></td>
+                <td><button class="btn btn-success btn-sm" onclick="removeCart(${index})">DELETE</button></td>
             </tr>
         `;
     });
@@ -28,20 +28,24 @@ const updateCartDisplay = () => {
     localStorage.setItem("cart", JSON.stringify(cart));
 };
 
-const updateQuantity = (index, change) => {
+const Quantity = (index, val) => {
   if (cart[index]) {
-    if (cart[index].quantity + change >= 1) {
-      cart[index].quantity += change;
+    if (cart[index].quantity + val > 1) {
+      cart[index].quantity += val;
+    } else if (val === -1) {
+   
+      cart.splice(index, 1);
     } else {
       cart[index].quantity = 1;
     }
-    updateCartDisplay();
+    cartui();
   }
 };
 
-const removeFromCart = (index) => {
+
+const removeCart = (index) => {
     cart.splice(index, 1);
-    updateCartDisplay();
+    cartui();
 };
 
-updateCartDisplay();
+cartui();

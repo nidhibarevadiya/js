@@ -1,4 +1,4 @@
-let sing = JSON.parse(localStorage.getItem("singup's")) || [];  
+let sing = JSON.parse(localStorage.getItem("signup's")) || [];  
 
 const IsExists = (email) => {
     let isUser = sing.find((singuser) => singuser.email === email)
@@ -26,6 +26,7 @@ const handleSubmit = (e) => {
         if (userData.singuser.password == login.password)
         {
             alert("login success");
+            window.location.href="./home.html"
         }
         else {
             alert("password does not match")
@@ -38,6 +39,6 @@ const handleSubmit = (e) => {
   
 };
 
-debugger
+
 
 document.getElementById("loginpage").addEventListener("submit", handleSubmit);

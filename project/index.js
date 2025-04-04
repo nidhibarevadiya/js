@@ -196,7 +196,7 @@ for(let i=0; i<products.length; i++) {
         <div class="flex"> <p  class="ti1">${products[i].category}</p></div>
         <div class="flex"> <p  class="ti3">${products[i].rating.rate}</p></div>
      
-         <div class="flex"><button class="btn btn-primary ti2" onclick="addToCart(${products[i].id})">Add to Cart</button></div>
+         <div class="flex"><button class="btn btn-success ti2" onclick="addToCart(${products[i].id})">Add to Cart</button></div>
     </div>
 </div>
     `;
