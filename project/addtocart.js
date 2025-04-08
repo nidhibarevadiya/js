@@ -4,7 +4,7 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 const cartui = () => {
     let cartContainer = document.getElementById("cart-items");
     let grandTotal = 0;
-    cartContainer.innerHTML = cart.length === 0 ? '<tr><td colspan="6">Your cart is empty.</td></tr>' : "";
+    cartContainer.innerHTML = cart.length === 0 ? '<tr><td colspan="6">  </td></tr>' : "";
 
     cart.forEach((item, index) => {
         let total = item.price * item.quantity;
