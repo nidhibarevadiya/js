@@ -1,7 +1,7 @@
 
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
-const weatherCard = document.querySelector(".weather-card"); 
+const weatherCard = document.querySelector(".weather-card");
 
 const getWeatherIcon = (condition) => {
   switch (condition) {
@@ -20,7 +20,7 @@ const getWeatherIcon = (condition) => {
     case "Drizzle":
       return "https://www.freeiconspng.com/thumbs/cloud-rain-icons/cloud-rain-weather-icon-25.png";
     default:
-      return "https://cdn-icons-png.flaticon.com/512/1163/1163661.png"; 
+      return "https://cdn-icons-png.flaticon.com/512/1163/1163661.png";
   }
 };
 
@@ -79,6 +79,38 @@ const checkWeather = async (city) => {
   UI(res);
 };
 
+const getlocation = () => {
+  navigator.geolocation.getCurrentPosition((pos) => {
+    console.log(pos.coord)
+    const lati = pos.coord.lat
+    const long = pos.coord.lon
+
+    checkWeatherbylocation(lati, long)
+
+  })
+}
+
+getlocation()
+
+
+const checkWeatherbylocation = async (lati, long) => {
+  let req = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lati}&lon=${long}&appid=97ed86b99fdcf738c7a080e0fa9fde20&units=metric`
+
+    
+  );
+
+  if (!req.ok) {
+    alert("City not found");
+    console.error("City not found");
+    return;
+  }
+
+  let res = await req.json();
+  console.log(res);
+  UI(res);
+};
+
 checkWeather("Mumbai");
 
 
@@ -88,3 +120,4 @@ checkWeather("Mumbai");
 
 
 // https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=97ed86b99fdcf738c7a080e0fa9fde20&units=metric
+// `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=97ed86b99fdcf738c7a080e0fa9fde20&units=metric
