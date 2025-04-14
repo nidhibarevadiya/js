@@ -81,14 +81,16 @@ const checkWeather = async (city) => {
 
 const getlocation = () => {
   navigator.geolocation.getCurrentPosition((pos) => {
-    console.log(pos.coord)
-    const lati = pos.coord.lat
-    const long = pos.coord.lon
-
-    checkWeatherbylocation(lati, long)
-
-  })
-}
+    console.log(pos.coords);
+    const lati = pos.coords.latitude; 
+    const long = pos.coords.longitude; 
+    checkWeatherbylocation(lati, long);
+  },
+  (err) => {
+    console.error("Geolocation error:", err.message);
+    alert("Unable to fetch location. Please allow location access.");
+  });
+};
 
 getlocation()
 
@@ -110,8 +112,11 @@ const checkWeatherbylocation = async (lati, long) => {
   console.log(res);
   UI(res);
 };
-
-checkWeather("Mumbai");
+setTimeout(() => {
+  if (!weatherCard.innerHTML.trim()) {
+    checkWeather("Mumbai");
+  }
+}, 3000);
 
 
 

@@ -1,3 +1,11 @@
 {
-    "user":[]
+  "products": [
+    
+    {
+      "id": "24d9",
+      "title": "yashvi ",
+      "price": "1234",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRznhqRhrBspefmnSIk4FpPICa-jPVrrnALi0Xy3PiRDTJ9Ro9OkESJnPY&s"
+    }
+  ]
 }
