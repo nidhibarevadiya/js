@@ -1,11 +1,22 @@
 {
   "products": [
-    
     {
       "id": "24d9",
       "title": "yashvi ",
       "price": "1234",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRznhqRhrBspefmnSIk4FpPICa-jPVrrnALi0Xy3PiRDTJ9Ro9OkESJnPY&s"
+    },
+    {
+      "id": "1b83",
+      "title": "nidhi",
+      "price": "345",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRznhqRhrBspefmnSIk4FpPICa-jPVrrnALi0Xy3PiRDTJ9Ro9OkESJnPY&s"
+    },
+    {
+      "id": "fa6a",
+      "title": "jensi",
+      "price": "12345",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuJwhYNkFgYifz8u8-Te6p0ClWqQsIDCGAwg&s"
     }
   ]
 }
