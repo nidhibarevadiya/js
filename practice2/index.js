@@ -11,6 +11,11 @@ const createProduct = async (product) => {
     console.log(res);
     uimaker(res);
 }
+const deletdata = async(id) =>{
+    await fetch (`http://localhost:3000/products/${id}`,{
+        method:"DELETE"
+    })
+}
 
 
 
@@ -55,8 +60,15 @@ const uimaker = (product) => {
     img.style.width = "150px";
     img.style.height = "150px";
 
+    let dltbtn =document.createElement("button");
+    dltbtn.innerHTML="delete"
+
+    dltbtn.addEventListener("click", ()=>{
+        deletdata(product.id)
+    })
+
     let div = document.createElement('div');
-    div.append(img, title, price);
+    div.append(img, title, price,dltbtn);
 
     document.getElementById("productList").append(div);
 }
