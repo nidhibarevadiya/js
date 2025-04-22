@@ -1,5 +1,5 @@
 
-
+let id=-1;
 
 const createProduct = async (product) => {
     let req = await fetch('http://localhost:3000/products', {
@@ -11,11 +11,27 @@ const createProduct = async (product) => {
     console.log(res);
     uimaker(res);
 }
+
+
 const deletdata = async(id) =>{
     await fetch (`http://localhost:3000/products/${id}`,{
         method:"DELETE"
     })
 }
+
+
+const update = async (data) => {
+    await fetch(`http://localhost:3000/products/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    });
+   
+  
+}
+
+
+
 
 
 
@@ -45,7 +61,27 @@ const handleSubmit = (e) => {
         img: document.getElementById('img').value
     }
 
-    createProduct(product);
+   if(id==-1){
+    createProduct(product)
+   }
+   else{
+    update(product)
+   }
+}
+ 
+const setvalue =(id,value)=>{
+    document.getElementById(id).value=value;
+}
+
+const addtoform =(data) =>{
+setvalue("title",data.title)
+setvalue("price",data.price)
+setvalue("img",data.img)
+id=data.id
+if(id=data.id){
+
+setvalue("type","update")}
+
 }
 
 const uimaker = (product) => {
@@ -67,8 +103,13 @@ const uimaker = (product) => {
         deletdata(product.id)
     })
 
+     let updatebtn =document.createElement("button");
+     updatebtn.innerHTML="update";
+
+     updatebtn.addEventListener("click",()=>addtoform(product))
+
     let div = document.createElement('div');
-    div.append(img, title, price,dltbtn);
+    div.append(img, title, price,dltbtn,updatebtn);
 
     document.getElementById("productList").append(div);
 }
