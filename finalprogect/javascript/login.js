@@ -13,9 +13,10 @@ const handellogin = async (user) => {
     }
     else{
   alert ("logged")
-  localStorage.setItem("is loggedin" , true)
+  localStorage.setItem("isLoggedIn", true);
+
   localStorage.setItem("user",JSON.stringify(res[0]))
-  window.location.heref="../index.html"
+  window.location.href = "../index.html";
     }
 }
 

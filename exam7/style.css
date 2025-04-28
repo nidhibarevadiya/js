@@ -1,0 +1,87 @@
+/* General body styling */
+body {
+    background-color: #f8f1e4; /* Light warm color */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  /* Heading style */
+  h1 {
+    text-align: center;
+    color: #6b4226; /* Dark brown */
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  
+  /* Search box style */
+  #searchInput {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    width: 300px;
+    border: 2px solid #d2b48c; /* Light brown */
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Buttons styling */
+  button {
+    background-color: #6b4226; /* Dark brown */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Button hover effect */
+  button:hover {
+    background-color: #8b5e3c; /* Lighter brown on hover */
+  }
+  
+  /* Product list container */
+  #productList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Each product card */
+  #productList div {
+    background-color: #fff8ef; /* Light cream card */
+    border: 1px solid #d2b48c;
+    border-radius: 12px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Product image */
+  #productList img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Product title */
+  #productList h3 {
+    font-size: 20px;
+    color: #6b4226;
+    margin: 10px 0 5px 0;
+  }
+  
+  /* Product price */
+  #productList h5 {
+    font-size: 18px;
+    color: #8b5e3c;
+    margin-bottom: 10px;
+  }
+  

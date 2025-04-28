@@ -1,15 +1,52 @@
 {
   "users": [
     {
-      "id": "b947",
-      "name": "nidhi",
-      "email": "user1@gmail.com",
-      "password": "12345678"
+      "id": "204e",
+      "name": "Barevadiya Nidhi",
+      "email": "user1023@gmail.com",
+      "password": "123456"
     },
     {
-      "id": "5df1",
-      "email": "user1@gmail.com",
+      "id": "f767",
+      "name": "Barevadiya Nidhi",
+      "email": "user123@gmail.com",
       "password": "12345678"
     }
-  ]
+  ],
+  "products": [
+    {
+      "id": "ed54",
+      "title": "nidhi",
+      "price": "12354",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mIRcd6AEWdNnOuWovltDn8b4hgAzaDHznA&s",
+      "desc": "fesgtruweu",
+      "Category": "electronics",
+      "quantity": 1
+    },
+    {
+      "id": "b836",
+      "title": "nhrtsddaewq",
+      "price": "547",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mIRcd6AEWdNnOuWovltDn8b4hgAzaDHznA&s",
+      "desc": "dhs",
+      "Category": "home"
+    },
+    {
+      "id": "c682",
+      "title": "jensi",
+      "price": "324",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mIRcd6AEWdNnOuWovltDn8b4hgAzaDHznA&s",
+      "desc": "rdfa",
+      "Category": "electronics"
+    },
+    {
+      "id": "8632",
+      "title": "n",
+      "price": "356789",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mIRcd6AEWdNnOuWovltDn8b4hgAzaDHznA&s",
+      "desc": "d",
+      "Category": "home"
+    }
+  ],
+  "carts": []
 }

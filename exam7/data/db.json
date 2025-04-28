@@ -1,0 +1,154 @@
+{
+  "products": [
+    {
+      "id": "f1a2",
+      "title": "Pizza",
+      "price": "12.99",
+      "img": "https://api.foodso.me/uploads/Rcfu9nQb.jpg"
+    },
+    {
+      "id": "b2f3",
+      "title": "Burger",
+      "price": "8.99",
+      "img": "https://assets.epicurious.com/photos/556dd2d1d8348b711704fee9/6:4/w_1998,h_1332,c_limit/56389604_insanity-burger_6x4.jpg"
+    },
+    {
+      "id": "c4b6",
+      "title": "Sushi",
+      "price": "15.99",
+      "img": "https://int.japanesetaste.com/cdn/shop/articles/how-to-make-makizushi-sushi-rolls-japanese-taste.jpg?v=1707914944&width=5760"
+    },
+    {
+      "id": "d5c7",
+      "title": "Pasta",
+      "price": "10.49",
+      "img": "https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2021/10/roasted-tomato-sauce-portion-800x1200.jpg"
+    },
+    {
+      "id": "e6f8",
+      "title": "Salad",
+      "price": "7.99",
+      "img": "https://www.eatingwell.com/thmb/xzR1INWu-qKNgOqwG4cIMERqsMo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/eat-the-rainbow-chopped-salad-with-basil-mozzarella-beauty-184-278133-4000x4000-ef8f3f0ad7134d2b860c51f5e7b38ce5.jpg"
+    },
+    {
+      "id": "f7g9",
+      "title": "Tacos",
+      "price": "5.99",
+      "img": "https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/61/85/1/6NMZFiJpSFu4wypOorjb_veg%20tacos-1.jpg"
+    },
+    {
+      "id": "h8i0",
+      "title": "Hot Dog",
+      "price": "4.99",
+      "img": "https://www.thespruceeats.com/thmb/ENcFdRTz-IBidu7e1uP4TB_NF_s=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/hamburger-hot-dogs-480688-hero-01-806dc82af5a44b3ea3704e298b7c81c1.jpg"
+    },
+    {
+      "id": "i9j1",
+      "title": "Tacos",
+      "price": "22.99",
+      "img": "https://feelgoodfoodie.net/wp-content/uploads/2024/04/Ground-Beef-Tacos-TIMG.jpg"
+    },
+    {
+      "id": "j0k2",
+      "title": "Pizza",
+      "price": "10.99",
+      "img": "https://api.foodso.me/uploads/Rcfu9nQb.jpg"
+    },
+    {
+      "id": "k1l3",
+      "title": "Ice Cream",
+      "price": "3.99",
+      "img": "https://static.toiimg.com/thumb/msid-112315676,width-1280,height-720,resizemode-4/112315676.jpg"
+    },
+    {
+      "id": "l2m4",
+      "title": "Brownies",
+      "price": "4.49",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaFVyQhbJ09NU4-Yu78OavOmzvh8I1ymKZ5Q&s"
+    },
+    {
+      "id": "m3n5",
+      "title": "Donuts",
+      "price": "2.99",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjZJO1Xf8QSK1YGt4LVwYfKtEcBixcOFuTTw&s"
+    },
+    {
+      "id": "n4o6",
+      "title": "Bagels",
+      "price": "1.99",
+      "img": "https://crustworthybreads.in/cdn/shop/files/Bagels.png?v=1715664025"
+    },
+    {
+      "id": "o5p7",
+      "title": "Pasta",
+      "price": "9.99",
+      "img": "https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2021/10/roasted-tomato-sauce-portion-800x1200.jpg"
+    },
+    {
+      "id": "p6q8",
+      "title": "Nachos",
+      "price": "6.99",
+      "img": "https://freshchoice.imgix.net/assets/recipes/iStock-1149018215.jpg"
+    },
+    {
+      "id": "q7r9",
+      "title": "Burrito",
+      "price": "7.49",
+      "img": "https://cdn.loveandlemons.com/wp-content/uploads/2023/05/vegan-burrito.jpg"
+    },
+    {
+      "id": "r8s0",
+      "title": "Smoothie",
+      "price": "5.49",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrWkBkeOD5i_cMKDEqBOSfer2oWCQJqSDHobL9lzc95OS9s9XAV7j6En3hfyb0FzGELaU&usqp=CAU"
+    },
+    {
+      "id": "s9t1",
+      "title": "Cakes",
+      "price": "14.99",
+      "img": "https://ocakes.in/storage/app/public/images/item/item-667ab251cac30.webp"
+    },
+    {
+      "id": "t0u2",
+      "title": "Pancakes",
+      "price": "7.99",
+      "img": "https://www.thegoodbutter.com/cdn/shop/products/VirtuousChocolateCakenew_e6fc7c13-5eb0-4371-8723-f8fddbda97ae.jpg?v=1629179648"
+    },
+    {
+      "id": "u1v3",
+      "title": "Smoothie",
+      "price": "11.99",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpsW3A1uuGRB_zPkCtPyAZOd5-mv62GKUrlA&s"
+    },
+    {
+      "id": "v2w4",
+      "title": "Falafel",
+      "price": "4.49",
+      "img": "https://plantbasedfolk.com/wp-content/uploads/2019/10/Lebanese-Falafel-Recipe-500x375.jpg"
+    },
+    {
+      "id": "w3x5",
+      "title": "Gyros",
+      "price": "8.49",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWFAaJ2iCFmeUEmCeZHk9Xx1tG0p3xKBtVag&s"
+    },
+    {
+      "id": "x4y6",
+      "title": "Waffles",
+      "price": "9.99",
+      "img": "https://www.kyleecooks.com/wp-content/uploads/2020/08/Brownie-Waffles-35.jpg"
+    },
+    {
+      "id": "y5z7",
+      "title": "Waffles",
+      "price": "6.99",
+      "img": "https://www.kyleecooks.com/wp-content/uploads/2020/08/Brownie-Waffles-35.jpg"
+    },
+    {
+      "id": "z6a8",
+      "title": "Quesadilla",
+      "price": "5.49",
+      "img": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_16:9/k%2FPhoto%2FRecipes%2F2025-02-quesadilla%2Fquesadilla-449"
+    }
+  ]
+}

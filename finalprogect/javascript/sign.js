@@ -17,6 +17,9 @@ const Onsubmit = (e) => {
     console.log(user);
     
     userMethod.create(user);
+
+    alert("sign up succesful..")
+  
     
     
 

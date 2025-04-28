@@ -1,6 +1,8 @@
 const navbar = () => {
+  let isLoggedIn = localStorage.getItem("isLoggedIn") || false;
+  let user = JSON.parse(localStorage.getItem("user")) || {};
     return `      
-             <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="/index.html">Navbar</a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,24 +15,41 @@ const navbar = () => {
                       </li>
   
                       <li class="nav-item">
-                        <a class="nav-link" href="./pages/prodect.html">PRODUCT</a>
+                        <a class="nav-link" href="/pages/prodect.html">PRODUCT</a>
                       </li>
 
                       <li class="nav-item">
-                        <a class="nav-link" href="./pages/addtoproduct.html">ADDTOCART</a>
+                        <a class="nav-link" href="/pages/addtoproduct.html">ADDTOPRODUCT</a>
                       </li>
 
                       <li class="nav-item">
-                        <a class="nav-link" href="./pages/cart.html">CART</a>
+                    
+                        <a class="nav-link" href="/pages/cart.html">CART</a>
                       </li>
 
-                      <li class="nav-item">
-                        <a class="nav-link" href="./pages/login.html">LOGIN</a>
-                      </li>
+                       <li class="nav-item">
+             
 
-                      <li class="nav-item">
-                        <a class="nav-link" href="./pages/sign.html">SIGNIn</a>
-                      </li>
+                  ${
+                    isLoggedIn
+                      ? `<span class="nav-link active" id="logout-btn" style="cursor:pointer;">Logout</span>`
+                      : `<a class="nav-link active" aria-current="page" href="/pages/login.html">login</a>`
+                  }
+                   
+                  </li>
+                  <li class="nav-item">
+
+                      ${
+                        isLoggedIn
+                          ? `<span class=nav-link active>${user.name}</span>`
+                          : `<a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="/pages/sign.html"
+                      >signup</a
+                    >`
+                      }
+                  </li>
 
                       
                     
