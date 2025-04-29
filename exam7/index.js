@@ -21,16 +21,8 @@ const getData = async () => {
 
 getData();
 
-const setvalue = (id, value) => {
-  document.getElementById(id).value = value;
-};
 
-const addtoform = (product) => {
-  setvalue('title', product.title);
-  setvalue('price', product.price);
-  setvalue('img', product.img);
-  id = product.id;
-};
+
 
 const displayProducts = (products) => {
   let container = document.getElementById("productList");
@@ -72,7 +64,7 @@ const searchProducts = () => {
 };
 
 const handleSort = (orderby) => {
-  let sortedProducts = [...allProducts]; // Copy bana rahe hai allProducts ka
+  let sortedProducts = [...allProducts]; 
 
   if (orderby === "lth") {
     sortedProducts.sort((a, b) => a.price - b.price);

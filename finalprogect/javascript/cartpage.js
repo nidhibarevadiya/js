@@ -1,90 +1,109 @@
+// import { cartsmethod } from "../api/cart.js";
+// import navbar from "../components/navbar.js";
+// import { isLoggedIn } from "../utils/helper.js";
+
+
+// document.getElementById("navbar").innerHTML = navbar();
+// isLoggedIn();
+
+// (async () => {
+//   try {
+//     let products = await cartsmethod.getAll();
+//     console.log(products);
+//     uiMaker(products);
+//   } catch (error) {
+//     console.error("Failed to fetch products:", error);
+//   }
+// })();
+
+  
+
+// document.addEventListener("click", (e) => {
+//     if (e.target && e.target.id === "logout-btn") {
+//       localStorage.removeItem("isLoggedIn");
+//       localStorage.removeItem("user");
+//       window.location.href = "/pages/login.html";
+//     }
+//   });
+  
+
 import { cartsmethod } from "../api/cart.js";
 import navbar from "../components/navbar.js";
 import { isLoggedIn } from "../utils/helper.js";
 
-// Set the navbar
 document.getElementById("navbar").innerHTML = navbar();
 isLoggedIn();
 
-// Fetch and display cart items
-(async () => {
+(async function () {
   try {
-    let products = await cartsmethod.getAll();
-    console.log(products);
-    uiMaker(products);
-  } catch (error) {
-    console.error("Failed to fetch products:", error);
+    const cartItems = await cartsmethod.getAll();
+    console.log("Cart Items:", cartItems);
+    renderCartUI(cartItems);
+  } catch (err) {
+    console.error("Error loading cart items", err);
   }
 })();
 
-const uiMaker = (cartItems) => {
-    const container = document.getElementById("cartItems");
-    container.innerHTML = "";
-    
-    cartItems.forEach((item) => {
-      const row = document.createElement("div");
-      row.className = "row mb-3";
-      
-      const colImage = document.createElement("div");
-      colImage.className = "col-3";
-      const image = document.createElement("img");
-      image.src = item.image || "https://via.placeholder.com/150";
-      image.alt = item.title;
-      image.className = "img-fluid";
-      colImage.appendChild(image);
-      
-      const colDetails = document.createElement("div");
-      colDetails.className = "col-6";
-      const title = document.createElement("h6");
-      title.textContent = item.title;
-      const price = document.createElement("p");
-      price.textContent = `Price: ₹${item.price}`;
-      const quantity = document.createElement("p");
-      quantity.textContent = `Quantity: ${item.quantity}`;
-      colDetails.appendChild(title);
-      colDetails.appendChild(price);
-      colDetails.appendChild(quantity);
-      
-      const colRemove = document.createElement("div");
-      colRemove.className = "col-3 d-flex align-items-center justify-content-center";
-      const removeBtn = document.createElement("button");
-      removeBtn.className = "btn btn-danger";
-      removeBtn.textContent = "Remove";
-      removeBtn.addEventListener("click", () => removeItemFromCart(item.id));
-      colRemove.appendChild(removeBtn);
-      
-      row.appendChild(colImage);
-      row.appendChild(colDetails);
-      row.appendChild(colRemove);
-      container.appendChild(row);
-    });
-  };
-  
-  // Function to remove an item from cart
-  const removeItemFromCart = async (id) => {
-    try {
-      await cartsmethod.delete(id);
-      refreshCart();
-    } catch (error) {
-      console.error("Error removing item:", error);
-    }
-  };
-  
-  const refreshCart = async () => {
-    try {
-      let cartItems = await cartsmethod.getAll();
-      uiMaker(cartItems);
-    } catch (error) {
-      console.error("Failed to fetch cart items:", error);
-    }
-  };
-  
+function renderCartUI(cartItems) {
+  const container = document.createElement("div");
+  container.className = "container mt-4";
+  container.innerHTML = `<h2 class="mb-4">Your Cart</h2>`;
 
-document.addEventListener("click", (e) => {
-    if (e.target && e.target.id === "logout-btn") {
-      localStorage.removeItem("isLoggedIn");
-      localStorage.removeItem("user");
-      window.location.href = "/pages/login.html";
-    }
-  });
-  
+  const row = document.createElement("div");
+  row.className = "row";
+
+  if (cartItems.length === 0) {
+    container.innerHTML += "<p>Your cart is empty.</p>";
+  } else {
+    cartItems.forEach((item) => {
+      const col = document.createElement("div");
+      col.className = "col-md-4 mb-4";
+
+      const card = document.createElement("div");
+      card.className = "card h-100";
+
+      const img = document.createElement("img");
+      img.src = item.image;
+      img.className = "card-img-top";
+      img.alt = item.title;
+      img.style.height = "200px";
+      img.style.objectFit = "cover";
+
+      const cardBody = document.createElement("div");
+      cardBody.className = "card-body";
+
+      const title = document.createElement("h5");
+      title.className = "card-title";
+      title.textContent = item.title;
+
+      const price = document.createElement("p");
+      price.className = "card-text fw-bold";
+      price.textContent = `₹${item.price}`;
+
+      const qty = document.createElement("p");
+      qty.textContent = `Quantity: ${item.qty}`;
+
+      const delBtn = document.createElement("button");
+      delBtn.className = "btn btn-danger";
+      delBtn.textContent = "Remove";
+      delBtn.addEventListener("click", async () => {
+        await cartsmethod.delete(item.id);
+        location.reload(); // Refresh to update UI
+      });
+
+      cardBody.appendChild(title);
+      cardBody.appendChild(price);
+      cardBody.appendChild(qty);
+      cardBody.appendChild(delBtn);
+
+      card.appendChild(img);
+      card.appendChild(cardBody);
+      col.appendChild(card);
+      row.appendChild(col);
+    });
+  }
+
+  container.appendChild(row);
+  document.body.appendChild(container);
+}
+

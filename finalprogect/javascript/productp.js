@@ -20,17 +20,27 @@ isLoggedIn();
 
 
 
-const handelcart = async (data) => {
-    console.log(data)
-    let res = await cartsmethod.getbyid(data.id)
-    console.log(res)
-    if(!res){
-      cartsmethod.post({...data,qty:1})
-    }
-    else{
-      cartsmethod.update(data.id,{qty:res.qty+1})
-    }
-}
+// const handelcart = async (data) => {
+//     console.log(data)
+//     let res = await cartsmethod.getbyid(data.id)
+//     console.log(res)
+//     if(!res){
+//       cartsmethod.post({...data,qty:1})
+//     }
+//     else{
+//       cartsmethod.update(data.id,{qty:res.qty+1})
+//     }
+// }
+
+
+const handelcart = async (product) => {
+  let res = await cartsmethod.getbyid(product.id);
+  if (!res) {
+    await cartsmethod.post({ ...product, qty: 1 });
+  } else {
+    await cartsmethod.update(product.id, { qty: res.qty + 1 });
+  }
+};
 
 
 
