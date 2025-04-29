@@ -55,5 +55,15 @@
       "Category": "home"
     }
   ],
-  "carts": []
+  "carts": [
+    {
+      "id": "2cdc",
+      "title": "nidhi",
+      "price": "123",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mIRcd6AEWdNnOuWovltDn8b4hgAzaDHznA&s",
+      "desc": "ewd",
+      "Category": "electronics",
+      "qty": 1
+    }
+  ]
 }
