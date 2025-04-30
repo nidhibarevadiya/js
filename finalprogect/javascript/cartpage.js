@@ -1,30 +1,4 @@
-// import { cartsmethod } from "../api/cart.js";
-// import navbar from "../components/navbar.js";
-// import { isLoggedIn } from "../utils/helper.js";
 
-
-// document.getElementById("navbar").innerHTML = navbar();
-// isLoggedIn();
-
-// (async () => {
-//   try {
-//     let products = await cartsmethod.getAll();
-//     console.log(products);
-//     uiMaker(products);
-//   } catch (error) {
-//     console.error("Failed to fetch products:", error);
-//   }
-// })();
-
-  
-
-// document.addEventListener("click", (e) => {
-//     if (e.target && e.target.id === "logout-btn") {
-//       localStorage.removeItem("isLoggedIn");
-//       localStorage.removeItem("user");
-//       window.location.href = "/pages/login.html";
-//     }
-//   });
   
 
 import { cartsmethod } from "../api/cart.js";
@@ -43,7 +17,6 @@ isLoggedIn();
     console.error("Error loading cart items", err);
   }
 })();
-
 function renderCartUI(cartItems) {
   const container = document.createElement("div");
   container.className = "container mt-4";
@@ -80,20 +53,58 @@ function renderCartUI(cartItems) {
       price.className = "card-text fw-bold";
       price.textContent = `₹${item.price}`;
 
-      const qty = document.createElement("p");
-      qty.textContent = `Quantity: ${item.qty}`;
+      const qtyContainer = document.createElement("div");
+      qtyContainer.className = "d-flex justify-content-between align-items-center mb-2";
 
-      const delBtn = document.createElement("button");
-      delBtn.className = "btn btn-danger";
-      delBtn.textContent = "Remove";
-      delBtn.addEventListener("click", async () => {
-        await cartsmethod.delete(item.id);
-        location.reload(); // Refresh to update UI
+      const qtyLabel = document.createElement("p");
+      qtyLabel.className = "mb-0";
+      qtyLabel.textContent = `Quantity: ${item.qty}`;
+
+      const btnGroup = document.createElement("div");
+
+
+
+      const btnMinus = document.createElement("button");
+      btnMinus.className = "btn btn-outline-secondary btn-sm";
+      btnMinus.textContent = "−";
+      btnMinus.addEventListener("click", async () => {
+        if (item.qty > 1) {
+          await cartsmethod.update(item.id, { qty: item.qty - 1 });
+        } else {
+          await cartsmethod.delete(item.id);
+        }
+        location.reload(); // Refresh
       });
+
+      const btnPlus = document.createElement("button");
+      btnPlus.className = "btn btn-outline-secondary btn-sm";
+      btnPlus.textContent = "+";
+      btnPlus.addEventListener("click", async () => {
+        await cartsmethod.update(item.id, { qty: item.qty + 1 });
+        location.reload();
+      });
+
+      btnGroup.appendChild(btnMinus);
+      btnGroup.appendChild(btnPlus);
+      qtyContainer.appendChild(qtyLabel);
+      qtyContainer.appendChild(btnGroup);
+
+
+
+const delBtn = document.createElement("button");
+delBtn.className = "btn btn-danger w-100 mt-2";
+delBtn.textContent = "Remove Item";
+delBtn.addEventListener("click", () => removeFromCart(item.id));
+
+
+
+
+
+
 
       cardBody.appendChild(title);
       cardBody.appendChild(price);
-      cardBody.appendChild(qty);
+      cardBody.appendChild(qtyContainer);
       cardBody.appendChild(delBtn);
 
       card.appendChild(img);
@@ -106,4 +117,31 @@ function renderCartUI(cartItems) {
   container.appendChild(row);
   document.body.appendChild(container);
 }
+
+
+const removeFromCart = async (id) => {
+  try {
+    const item = await cartsmethod.getbyid(id);
+
+    if (!item) {
+      console.warn("Item not found in cart");
+      return;
+    }
+
+    if (item.qty > 1) {
+
+      await cartsmethod.update(id, { qty: item.qty - 1 });
+      console.log(`Decreased qty of item ${id} to ${item.qty - 1}`);
+    } else {
+   
+      await cartsmethod.delete(id);
+      console.log(`Deleted item with ID ${id}`);
+    }
+
+    location.reload(); 
+  } catch (err) {
+    console.error("Error while removing from cart:", err);
+  }
+};
+
 
