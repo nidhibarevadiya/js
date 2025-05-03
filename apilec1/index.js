@@ -32,4 +32,25 @@ const getData = async () => {
 };
 
 getData();
-  
+
+
+const uimaker=(data)=>{
+  data.map((Item)=>{
+    let div=document.createElement("div");
+    div.innerHTML=Item.name;
+
+  })
+
+}
+
+
+
+
+
+const uimakerr = (data) => {
+  data.forEach((item) => {
+    const element = document.createElement('div');
+    element.textContent = item.name; // Example property access
+    document.body.appendChild(element);
+  });
+};
