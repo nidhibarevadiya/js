@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    height: 70px;
+    width: 100%;
+    color: #638C6D;
+    background-color: black;
+}
+
+.butforpro {
+    height: 70px;
+    width: 100%;
+    color: #638C6D;
+    background-color: black;
+
+}
+
+.butforpro1 {
+    gap: 100px;
+}
+
+/* hero section start */
+.herosection {
+    height: 150vh;
+    width: 100%;
+}
+
+.slider {
+    height: 150vh;
+    width: 100%;
+
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.menu-img{
+    padding: 0 60px;
+    margin-bottom: 15px;
+}
+.menu-item{
+    text-align: center;
+}
+
+/* prodectpage start */
+
+.im {
+    border: 3px solid black;
+    border-radius: 100%;
+    width: 170px;
+    height: 110px;
+    transition: transform 2s ease;
+    margin-bottom: 30px;
+
+}
+
+.im:hover {
+    transform: scale(1.1);
+}
+
+.box {
+    width: 350px;
+
+    height: 500px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color:rgba(0, 183, 255, 0.271);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 130px;
+
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+}
+
+.box:hover {
+
+    background-color: rgba(0, 183, 255, 0.501)  ;
+}
+
+.ti {
+    font-size: 16px;
+    text-align: center;
+}
+
+.ti1 {
+    text-align: center;
+}
+
+/* .ti2 {
+    text-align: center;
+    transition: transform 2s ease;
+}
+
+.ti2:hover {
+    transform: scale(1.1);
+} */
+
+.ti3 {
+    text-align: center;
+}
+
+.des {
+    width: 350px;
+    display: flex;
+    text-align: center;
+}
+
+
+
+/* add to cart page */
+.cartpage {
+    height: 70px;
+    width: 100%;
+    color: #638C6D;
+    background-color: black;
+    margin-top: 3px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.paased {
+    border: 1px solid rgb(2, 83, 2);
+    outline: 1px solid rgb(2, 83, 2);
+  }
+  
+  .err {
+    border: 1px solid red;
+    outline: 1px solid red;
+  }
+
+
+body {
+    background-color: #121212;
+    color: #f1f1f1;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #4CAF50;
+}
+
+form {
+    background: #1e1e1e;
+    padding: 20px;
+    max-width: 300px;
+    margin: 50px auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+}
+
+input[type="submit"] {
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+}
+
+input[type="submit"]:hover {
+    background: #45a049;
+}
