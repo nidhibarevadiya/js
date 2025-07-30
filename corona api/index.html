@@ -1,38 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>COVID-19 Tracker</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-   <div  class="all">
-     <header>
-      <h1>COVID-19 Tracker</h1>
-      <select id="country-select">
-        <option value="">Global</option>
-      </select>
-    </header>
-
-   
-      <section class="cardgrid">
-        <div class="card" id="cases">
-          <h2>Total Cases</h2>
-          <p>--</p>
-        </div>
-        <div class="card" id="deaths">
-          <h2>Total Deaths</h2>
-          <p>--</p>
-        </div>
-        <div class="card" id="recovered">
-          <h2>Total Recovered</h2>
-          <p>--</p>
-        </div>
-      </section>
-
-   </div>
-
-    <script src="./index.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COVID-19 Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="bgimg">
+    <h1>COVID-19 Dashboard</h1>
+    <select id="country-select">
+      <option value="all">Global</option>
+    </select>
+    <div class="cards">
+      <div class="card" id="cases">Total Cases: <span>Loading...</span></div>
+      <div class="card" id="deaths">Total Deaths: <span>Loading...</span></div>
+      <div class="card" id="recovered">Total Recovered: <span>Loading...</span></div>
+    </div>
+    <div id="loader" class="loader hidden"></div>
+    <div id="error" class="error hidden"></div>
+  </div>
+  </div>
+  <script src="index.js"></script>
+</body>
 </html>
